@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RadioGroup
+        android:id="@+id/radioMetricSelection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp">
+
+        <RadioButton
+            android:id="@+id/radiooNegative"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Negative"
+            style="@style/CustomRadioButton"/>
+
+        <RadioButton
+            android:id="@+id/radiooPositive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Positive"/>
+
+        <RadioButton
+            android:id="@+id/radiooDeath"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Death"/>
+
+    </RadioGroup>
+
+    <com.robinhood.spark.SparkView
+        android:background="@color/bg"
+        android:paddingTop="16dp"
+        android:layout_marginTop="8dp"
+        android:paddingBottom="8dp"
+        android:id="@+id/sparkyView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/radioMetricSelection"
+        android:layout_above="@+id/radioGroupTimeSelection"/>
+
+    <RadioGroup
+        android:background="@color/bg"
+        android:gravity="center"
+        android:id="@+id/radioGroupTimeSelection"
+        android:layout_above="@+id/ll3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_centerInParent="true"
+        android:paddingBottom="8dp">
+
+        <RadioButton
+            android:id="@+id/radiooWeek"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Week"/>
+
+        <RadioButton
+            android:id="@+id/radiooMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Month"/>
+
+        <RadioButton
+            android:id="@+id/radiooMax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Max"/>
+
+    </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/ll3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/dateTv"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_weight="0.7"
+            android:text="30th May, 2020"
+            android:layout_gravity="center"
+            android:gravity="center"/>
+
+        <com.robinhood.ticker.TickerView
+            android:id="@+id/metricTextView"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_weight="0.3"
+            android:text="54,923"
+            android:gravity="center"
+            android:textSize="30dp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
